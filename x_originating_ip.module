@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ * Add client IP addresses to outgoing email for tracking the source of spam.
+ */
+
+/**
+ * Implements hook_mail_alter().
+ */
+function x_originating_ip_mail_alter(&$message) {
+  $message['headers']['X-Originating-IP'] = '[' . ip_address() . ']';
+}
