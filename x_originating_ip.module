@@ -27,8 +27,14 @@ function x_originating_ip_menu() {
  * Implements hook_mail_alter().
  */
 function x_originating_ip_mail_alter(&$message) {
-  $header = variable_get('x_originating_ip_header', 'X-Originating-IP');
-  $message['headers'][$header] = '[' . ip_address() . ']';
+  $ip_address = ip_address();
+
+  // the normal headers should be sufficient if it's originating from the
+  // server anyway, so don't include a header for localhost 127.0.0.1
+  if ($ip_address != '127.0.0.1') {
+    $header = variable_get('x_originating_ip_header', 'X-Originating-IP');
+    $message['headers'][$header] = '[' . $ip_address . ']';
+  }
 }
 
 function _x_originating_ip_headers() {
