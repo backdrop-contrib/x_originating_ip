@@ -11,9 +11,9 @@
 function x_originating_ip_menu() {
   $items = array();
 
-  $items['admin/config/x_originating_ip'] = array(
+  $items['admin/config/system/x_originating_ip'] = array(
     'title' => 'X-Originating-IP',
-    'description' => 'Switch to alternative header identifiers.',
+    'description' => 'Use alternative headers for outgoing email identifying the originating IP address of the remote client.',
     'access arguments' => array('administer site configuration'),
     'page callback' => 'drupal_get_form',
     'page arguments' => array('x_originating_ip_settings'),

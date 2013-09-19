@@ -30,7 +30,7 @@ function x_originating_ip_settings() {
  * Verify the header element is a valid option.
  */
 function _x_originating_ip_valid_header($element, &$form_state) {
-  if (!in_array($element['#value'], _x_originating_ip_headers()) {
+  if (!in_array($element['#value'], _x_originating_ip_headers())) {
     form_error($element, t('The @field field should be a valid email header.', array('@field' => $element['#title'])));
   }
 }
