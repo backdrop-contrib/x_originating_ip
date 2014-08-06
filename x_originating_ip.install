@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Manage the install, updates, and uninstallation for X-Originating-IP.
+ */
+
+/**
+ * Implements hook_requirements().
+ */
+function x_originating_ip_requirements($phase) {
+  if ($phase == 'runtime') {
+    $t = get_t();
+    $requirements['x_originating_ip_sponsor'] = array(
+      'title' => 'Sponsor X-Originating-IP',
+      'description' => $t('Responding to bug reports, adding new features, and upgrading for major Drupal updates takes significant time and energy.'),
+      'severity' => REQUIREMENT_INFO,
+      'value' => '<script data-gittip-username="deekayen" data-gittip-widget="button" src="//gttp.co/v1.js"></script>',
+    );
+    return $requirements;
+  }
+}
