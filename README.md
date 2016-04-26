@@ -35,8 +35,8 @@ Current Maintainer
 
 - David Norman (https://github.com/deekayen)
 
-Maintainers
------------
+Credits
+-------
 
 - Originally written for Drupal, then ported to Backdrop by
   David Norman (https://github.com/deekayen)
