@@ -23,7 +23,7 @@ There is no configuration. Just enable the module and it will start working.
 Current Maintainer
 ------------------
 
-- David Norman (https://github.com/deekayen)
+- None
 
 Credits
 -------
